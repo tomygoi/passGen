@@ -8,7 +8,7 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-var criteria = {
+const criteria = {
   length: null,
   lowercase: false,
   uppercase: false,
@@ -17,10 +17,10 @@ var criteria = {
 };
 
 criteria.length = prompt("Enter a password legnth (8-128 characters)");
-criteria.lowercase = prompt("Include lowercase characters?");
-criteria.length = prompt("Include uppercase characters?");
-criteria.length = prompt("Include numeric characters?");
-criteria.length = prompt("Include special characters?");
+criteria.lowercase = confirm("Include lowercase characters?");
+criteria.length = confirm("Include uppercase characters?");
+criteria.length = confirm("Include numeric characters?");
+criteria.length = confirm("Include special characters?");
 
 if (isNaN(criteria.length) ||
     criteria.length < 8 ||
@@ -34,15 +34,29 @@ if (isNaN(criteria.length) ||
       return;
     }
 
-  var password = "";
-  var characters = {
+  let password = "";
+  const characters = {
     lowercase: "abcdefghijklmnopqrstuvwxyz",
     uppercase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
     numeric: "0123456789",
     special: "!@#$%^&*()_+-=[]\\|;':<>,.?/`~"
   };
-  var passwordText = document.querySelector("#password");
 
+  if (criteria.lowercase) {
+    password += characters.lowercase;
+  }
+  if (criteria.uppercase) {
+    password += characters.uppercase;
+  }
+  if (criteria.numeric) {
+    password += characters.numeric;
+  }
+  if (criteria.special) {
+    password += characters.special;
+  }
+  
+
+  var passwordText = document.querySelector("#password");
   passwordText.value = password;
 
 }
