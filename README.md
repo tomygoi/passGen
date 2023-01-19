@@ -6,7 +6,8 @@ This challenge presented an interface for a password generator and our task was 
 
 ##Usage 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-The password generator can be accessed via [https://tomygoi.github.io/passGen/] The user will click on the "Generate Password" button and the program will then prompt the user with several prompts for the different character types to be included in the password. After answering the prompts, the user will then be provided with a randomly generated password between 8-128 characters fitting their provided criteria. [paste image here]
+The password generator can be accessed via [https://tomygoi.github.io/passGen/] The user will click on the "Generate Password" button and the program will then prompt the user with several prompts for the different character types to be included in the password. After answering the prompts, the user will then be provided with a randomly generated password between 8-128 characters fitting their provided criteria. ![passGenPage](https://user-images.githubusercontent.com/120353691/213349008-a840db9c-b847-4c8b-9a91-0e634b526bcf.png)
+
 
 ##Credit 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
