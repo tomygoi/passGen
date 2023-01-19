@@ -1,8 +1,3 @@
-// Assignment code here
-
-
-
-
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
@@ -12,15 +7,15 @@ const criteria = {
   length: null,
   lowercase: false,
   uppercase: false,
-  numberic: false,
+  numeric: false,
   special: false
 };
 
 criteria.length = prompt("Enter a password legnth (8-128 characters)");
 criteria.lowercase = confirm("Include lowercase characters?");
-criteria.length = confirm("Include uppercase characters?");
-criteria.length = confirm("Include numeric characters?");
-criteria.length = confirm("Include special characters?");
+criteria.uppercase = confirm("Include uppercase characters?");
+criteria.numeric = confirm("Include numeric characters?");
+criteria.special = confirm("Include special characters?");
 
 if (isNaN(criteria.length) ||
     criteria.length < 8 ||
@@ -55,6 +50,20 @@ if (isNaN(criteria.length) ||
     password += characters.special;
   }
   
+  function shuffle(string) {
+    var array = string.split("");
+    var x = array.length, y, i;
+
+    while (x) {
+      i = Math.floor(Math.random() * x--);
+      y = array[x];
+      array[x] = array[i];
+      array[i] = y;
+    }
+    return array.join("");
+  }
+
+password = shuffle(password).slice(0, criteria.length);
 
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
